@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joãomusic</title>
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Ícones Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-papN1N0Yw0dn+NlF8G8rY+z9l3Dw9PYiQW0g+LKceGv8Qhx+ErnmWgk0KxJzP5ebLZ9u+biSLV8lRkEmg0LwHg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="nav-logo">
+        <i class="fa-brands fa-spotify"></i>
+      </div>
+
+      <div class="nav-library">
+        <p>
+          <i class="fa-solid fa-book"></i>
+          Sua biblioteca de músicas online
+        </p>
+      </div>
+
+      <div class="nav-playlist">
+        <h5>Crie sua Primeira Playlist</h5>
+        <p>É fácil, vamos te ajudar</p>
+        <button>Criar playlist</button>
+      </div>
+
+      <div class="nav-podcast">
+        <h5>Que tal seguir um Podcast</h5>
+        <p>Avisaremos você sobre nossos episódios</p>
+        <button>Explore Podcast</button>
+      </div>
+
+      <div class="nav-footer">
+        <a href="#">Legal</a>
+        <a href="#">Centro de Privacidade</a>
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Cookies</a>
+        <a href="#">Sobre anúncios</a>
+        <a href="#">Acessibilidade</a>
+      </div>
+
+      <button class="nav-lang-button">
+        Português (Brasil)
+        <i class="fa-solid fa-globe"></i>
+      </button>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <main class="main">
+      <header class="search-bar">
+        <input
+          type="text"
+          placeholder="Buscar por artistas, músicas ou podcasts"
+          aria-label="Buscar por artistas, músicas ou podcasts"
+        />
+      </header>
+
+      <section class="content">
+        <h2>Artistas Populares</h2>
+        <div id="artist-grid"></div>
+
+        <h2>Álbuns Populares</h2>
+        <div class="album-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>

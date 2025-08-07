@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: black;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* === SIDEBAR === */
+.sidebar {
+    width: 300px;
+    padding: 30px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.nav-logo {
+    font-size: 24px;
+}
+
+.nav-library {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-library i,
+.nav-library p {
+    color: #b7b3b6;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.nav-playlist,
+.nav-podcast {
+    background-color: #242424;
+    color: #b7b3b6;
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border-radius: 4px;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.nav-playlist button,
+.nav-podcast button {
+    background-color: #1db954;
+    color: #ffffff;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.nav-playlist p,
+.nav-podcast p {
+    color: #b7b3b6;
+    font-size: 12px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.nav-footer {
+    margin-top: auto;
+}
+
+.nav-footer a {
+    font-size: 12px;
+    color: #b7b3b6;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 12px;
+    display: inline-block;
+}
+
+/* === MAIN CONTENT === */
+.main {
+    flex: 1;
+    display: flex;
+    padding: 24px;
+    overflow-y: auto;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+/* === SEARCH BAR === */
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+  margin: 24px auto;
+  display: flex;
+  align-items: center;
+  background-color: #181818;
+  border: 1px solid #b7b3b6;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 50px;
+  position: relative;
+}
+
+.search-bar input {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 4px;
+  outline: none;
+
+}
+
+/* === BOTÃO DE IDIOMA === */
+.nav-lang-button {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #b7b3b6;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 16px;
+}
+
+/* === CARDS === */
+.artist-card,
+.album-card {
+    background-color: #181818;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    width: 100%;
+    max-width: 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.artist-card:hover,
+.album-card:hover {
+    background-color: #575555;
+}
+
+.artist-card img,
+.album-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 8px;
+}
+
+.artist-card h3,
+.album-card h3 {
+    font-size: 16px;
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+.artist-card p,
+.album-card p {
+    font-size: 12px;
+    color: #b7b3b6;
+    margin-top: 4px;
+}
+
+#artist-grid,
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .main {
+        padding: 16px;
+    }
+
+    .search-bar {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .search-bar {
+        margin-top: 20px;
+    }
+
+    .artist-card,
+    .album-card {
+        max-width: 100%;
+    }
+}
