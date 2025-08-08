@@ -16,7 +16,8 @@ body {
 
 .container {
     display: flex;
-    height: 100vh;
+    flex-wrap: wrap;
+    height: auto; /* Removido 100vh para evitar corte */
 }
 
 /* === SIDEBAR === */
@@ -27,6 +28,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     gap: 20px;
+    background-color: black;
 }
 
 .logo img {
@@ -111,7 +113,7 @@ body {
 /* === SEARCH BAR === */
 .search-bar {
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   margin: 24px auto;
   display: flex;
   align-items: center;
@@ -131,7 +133,6 @@ body {
   font-size: 14px;
   padding: 4px;
   outline: none;
-
 }
 
 /* === BOTÃO DE IDIOMA === */
@@ -200,6 +201,8 @@ body {
 }
 
 /* === RESPONSIVIDADE === */
+
+/* Tablet */
 @media (max-width: 1024px) {
     .container {
         flex-direction: column;
@@ -208,6 +211,7 @@ body {
     .sidebar {
         width: 100%;
         padding: 20px;
+        order: -1; /* Sidebar vai para cima no tablet */
     }
 
     .main {
@@ -215,21 +219,68 @@ body {
     }
 
     .search-bar {
-        width: 90%;
+        max-width: 100%;
+        margin: 10px 0;
     }
 }
 
+/* Celular */
 @media (max-width: 768px) {
     .sidebar {
-        display: none;
+        width: 100%;
+        padding: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
     }
 
-    .search-bar {
-        margin-top: 20px;
+    .main {
+        padding: 10px;
     }
 
     .artist-card,
     .album-card {
         max-width: 100%;
+    }
+
+    .search-bar {
+        padding: 8px;
+    }
+}
+/* Pequenos dispositivos */
+@media (max-width: 480px) {
+    .nav-library {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-library i,
+    .nav-library p {
+        font-size: 12px;
+    }
+
+    .nav-playlist,
+    .nav-podcast {
+        padding: 12px;
+    }
+
+    .nav-playlist button,
+    .nav-podcast button {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    .nav-playlist p,
+    .nav-podcast p {
+        font-size: 10px;
+    }
+
+    .nav-footer a {
+        font-size: 10px;
+        margin: 8px;
+    }
+
+    .search-bar input {
+        font-size: 12px;
     }
 }
